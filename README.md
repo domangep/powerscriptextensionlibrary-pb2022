@@ -6,3 +6,4 @@ The goal of the PowerScript #xtension Library is to produce better PowerBuilder 
 * More concise
 * Easier to read
 * Less error prone by providing new useful functions to help you to achieve this goal.
+ 
