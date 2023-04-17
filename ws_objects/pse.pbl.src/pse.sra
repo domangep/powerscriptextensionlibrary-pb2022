@@ -26,7 +26,7 @@ long richtexteditx64type = 3
 long richtexteditversion = 1
 string richtexteditkey = ""
 string appicon = ""
-string appruntimeversion = "22.0.0.1892"
+string appruntimeversion = "22.0.0.1900"
 end type
 global pse pse
 
