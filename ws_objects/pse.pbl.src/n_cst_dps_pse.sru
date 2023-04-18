@@ -59,6 +59,7 @@ Private:
 string		_pse_release
 
 end variables
+
 forward prototypes
 public function any isnull (ref any aa_value, any aa_ifnullvalue)
 public function integer isnull (ref integer ai_value, integer ai_ifnullvalue)
@@ -220,6 +221,12 @@ public function integer stringtofile (string as_filename, readonly string as_str
 public function integer arraytostring (readonly any aa_array[], ref string as_string, string as_delimiter)
 public function integer stringtofile (string as_filename)
 public function long getdwobjects (datawindow adw_control, string as_bandname, string as_objecttype, readonly _psedwobjectinfo astr_dwobjectsinfo[])
+public function longptr iif (boolean ab_exp, longptr alptr_true, longptr alptr_false)
+public function boolean iin (longptr alptr_val, longptr aptrl_array[])
+public function boolean isempty (longptr alptr_array[], ref integer ai_size)
+public function boolean ismissing (longptr alptr_parameter)
+public function longptr isnull (ref longptr alptr_value, longptr alptr_ifnullvalue)
+public subroutine swap (ref longptr alptr_var1, ref longptr alptr_var2)
 end prototypes
 
 public function any isnull (ref any aa_value, any aa_ifnullvalue);if isnull( aa_value ) then
@@ -2107,6 +2114,52 @@ next
 
 return ll_count
 end function
+
+public function longptr iif (boolean ab_exp, longptr alptr_true, longptr alptr_false);if ab_exp = true then return alptr_true
+
+return alptr_false
+
+end function
+
+public function boolean iin (longptr alptr_val, longptr aptrl_array[]);integer	li_i
+integer	li_limit
+
+if this.ismissing( alptr_val) then return false
+if this.isempty(  aptrl_array, li_limit ) then return false
+
+iInFoundPos = 0
+for li_i = 1 to li_limit
+	if alptr_val = aptrl_array[li_i] then 
+		iInFoundPos = li_i
+		return true
+	end if
+next
+
+return false
+
+end function
+
+public function boolean isempty (longptr alptr_array[], ref integer ai_size);ai_size = Upperbound(alptr_array)
+return ( ai_size < 1)
+end function
+
+public function boolean ismissing (longptr alptr_parameter);return isnull( alptr_parameter )
+
+end function
+
+public function longptr isnull (ref longptr alptr_value, longptr alptr_ifnullvalue);if isnull( alptr_value ) then
+	alptr_value = alptr_ifnullvalue
+end if
+
+return alptr_value
+end function
+
+public subroutine swap (ref longptr alptr_var1, ref longptr alptr_var2);longptr tmp
+
+tmp 	= alptr_var1
+alptr_var1 	= alptr_var2
+alptr_var2 	= tmp
+end subroutine
 
 on n_cst_dps_pse.create
 call super::create
