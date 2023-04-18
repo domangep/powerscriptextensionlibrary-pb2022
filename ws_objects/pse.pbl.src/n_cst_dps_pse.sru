@@ -22,18 +22,21 @@ type variables
 Public:
 privatewrite blob			NULL_BLOB
 privatewrite boolean		NULL_BOOLEAN
+privatewrite	byte			NULL_BYTE
 privatewrite char			NULL_CHAR
 privatewrite date			NULL_DATE
 privatewrite datetime		NULL_DATETIME
 privatewrite dec			NULL_DEC
 privatewrite int         		NULL_INT
 privatewrite long			NULL_LONG
+privatewrite longptr		NULL_LONGPTR
 privatewrite longlong		NULL_LONGLONG
 privatewrite real			NULL_REAL
 privatewrite string			NULL_STRING
 privatewrite time			NULL_TIME
 privatewrite uint         	NULL_UINT
 privatewrite ulong			NULL_ULONG
+
 
 privatewrite long	iInFoundPos
 
@@ -56,7 +59,6 @@ Private:
 string		_pse_release
 
 end variables
-
 forward prototypes
 public function any isnull (ref any aa_value, any aa_ifnullvalue)
 public function integer isnull (ref integer ai_value, integer ai_ifnullvalue)
@@ -1906,12 +1908,14 @@ end function
 
 private subroutine _pse_set_nullconstants ();SetNull( null_blob )
 SetNull( null_boolean )
+SetNull( null_byte )
 SetNull( null_char )
 SetNull( null_date )
 SetNull( null_datetime )
 SetNull( null_dec )
 SetNull( null_int )
 SetNull( null_long )
+SetNull( null_longptr )
 SetNull( null_longlong )
 SetNull( null_real )
 SetNull( null_string )
