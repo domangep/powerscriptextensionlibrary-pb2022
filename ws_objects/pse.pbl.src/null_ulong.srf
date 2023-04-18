@@ -1,0 +1,15 @@
+﻿$PBExportHeader$null_ulong.srf
+global type null_ulong from function_object
+end type
+
+forward prototypes
+global function ulong null_ulong ()
+end prototypes
+
+global function ulong null_ulong ();ulong lul_null
+Setnull(lul_null)
+
+return lul_null
+
+end function
+

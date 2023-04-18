@@ -1,0 +1,15 @@
+﻿$PBExportHeader$null_date.srf
+global type null_date from function_object
+end type
+
+forward prototypes
+global function date null_date ()
+end prototypes
+
+global function date null_date ();date ld_null
+Setnull(ld_null)
+
+return ld_null
+
+end function
+

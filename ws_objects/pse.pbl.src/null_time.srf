@@ -3,13 +3,13 @@ global type null_time from function_object
 end type
 
 forward prototypes
-global function double null_time ()
+global function time null_time ()
 end prototypes
 
-global function double null_time ();double ldbl_null
-Setnull(ldbl_null)
+global function time null_time ();time lt_null
+Setnull(lt_null)
 
-return ldbl_null
+return lt_null
 
 end function
 

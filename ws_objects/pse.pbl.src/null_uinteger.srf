@@ -1,0 +1,15 @@
+﻿$PBExportHeader$null_uinteger.srf
+global type null_uinteger from function_object
+end type
+
+forward prototypes
+global function uint null_uinteger ()
+end prototypes
+
+global function uint null_uinteger ();uint lui_null
+Setnull(lui_null)
+
+return lui_null
+
+end function
+

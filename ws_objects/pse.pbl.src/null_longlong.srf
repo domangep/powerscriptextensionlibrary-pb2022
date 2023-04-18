@@ -1,0 +1,15 @@
+﻿$PBExportHeader$null_longlong.srf
+global type null_longlong from function_object
+end type
+
+forward prototypes
+global function long null_longlong ()
+end prototypes
+
+global function long null_longlong ();long ll_null
+Setnull(ll_null)
+
+return ll_null
+
+end function
+
