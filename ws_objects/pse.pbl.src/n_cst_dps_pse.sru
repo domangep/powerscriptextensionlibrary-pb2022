@@ -200,7 +200,6 @@ public function integer savedata (string as_filename)
 public function integer savedata (string as_filename, integer ai_filetype)
 private function integer _pse_define_data (ref datastore ads_dictionary, string as_definition[])
 public function boolean isempty (string as_array[], ref integer ai_size)
-public function integer of_definedata (datastore ads_dictionary, string as_definition[])
 public function integer definedata (string as_definition[])
 private function long _pse_dict_filter (ref datastore ads_dictionary, string as_filter)
 public function long filterdata (datastore ads_datadictionary, string as_filter)
@@ -227,6 +226,7 @@ public function boolean isempty (longptr alptr_array[], ref integer ai_size)
 public function boolean ismissing (longptr alptr_parameter)
 public function longptr isnull (ref longptr alptr_value, longptr alptr_ifnullvalue)
 public subroutine swap (ref longptr alptr_var1, ref longptr alptr_var2)
+public function integer definedata (datastore ads_dictionary, string as_definition[])
 end prototypes
 
 public function any isnull (ref any aa_value, any aa_ifnullvalue);if isnull( aa_value ) then
@@ -1702,9 +1702,6 @@ public function boolean isempty (string as_array[], ref integer ai_size);ai_size
 return ( ai_size < 1)
 end function
 
-public function integer of_definedata (datastore ads_dictionary, string as_definition[]);return this._pse_define_data( ads_dictionary , as_definition )
-end function
-
 public function integer definedata (string as_definition[]);return this._pse_define_data( ids_dictionary , as_definition )
 end function
 
@@ -2160,6 +2157,9 @@ tmp 	= alptr_var1
 alptr_var1 	= alptr_var2
 alptr_var2 	= tmp
 end subroutine
+
+public function integer definedata (datastore ads_dictionary, string as_definition[]);return this._pse_define_data( ads_dictionary , as_definition )
+end function
 
 on n_cst_dps_pse.create
 call super::create
