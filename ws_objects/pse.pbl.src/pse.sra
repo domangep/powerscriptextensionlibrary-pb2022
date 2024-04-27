@@ -13,7 +13,6 @@ end forward
 global variables
 n_cst_dps_pse #
 end variables
-
 global type pse from application
 string appname = "pse"
 string themepath = "C:\Program Files (x86)\Appeon\PowerBuilder 19.0\IDE\theme"
@@ -26,7 +25,7 @@ long richtexteditx64type = 3
 long richtexteditversion = 1
 string richtexteditkey = ""
 string appicon = ""
-string appruntimeversion = "22.0.0.1900"
+string appruntimeversion = "22.2.0.3289"
 end type
 global pse pse
 
